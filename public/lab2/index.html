@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 2</title>
+    <style>
+        body { font-family: sans-serif; max-width: 700px; margin: 40px auto; }
+        fieldset { margin-bottom: 30px; padding: 15px 20px; border: 1px solid #ccc; border-radius: 8px; }
+        legend { font-weight: bold; padding: 0 8px; }
+        input[type=file], textarea { width: 100%; padding: 6px; margin: 8px 0; box-sizing: border-box; }
+        button { padding: 8px 16px; cursor: pointer; }
+        .hint { color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>Лабораторна робота 2</h1>
+
+    <fieldset>
+        <legend>Завантаження зображення</legend>
+        <form action="process.php" method="post" enctype="multipart/form-data">
+            <p>Дозволено: <strong>png, jpg, jpeg</strong>, до <strong>2 МБ</strong>.</p>
+            <input type="file" name="image" accept=".png,.jpg,.jpeg" required>
+            <button type="submit">Завантажити</button>
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Запис тексту у log.txt</legend>
+        <form action="text.php" method="post">
+            <textarea name="message" rows="4" placeholder="Введіть повідомлення..." required></textarea>
+            <button type="submit">Записати у файл</button>
+        </form>
+        <p class="hint">Після відправки ви побачите весь вміст log.txt.</p>
+    </fieldset>
+
+    <hr>
+    <p>
+        <a href="list.php">Переглянути список завантажених файлів</a>
+    </p>
+</body>
+</html>

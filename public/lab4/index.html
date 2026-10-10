@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        h1 { color: #333; border-bottom: 2px solid #667eea; padding-bottom: 8px; }
+        h2 { color: #555; }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 12px; }
+        a { color: #667eea; }
+        code { background: #eef; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .hint {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .hint ol { margin: 8px 0; }
+        .preview-img { max-width: 250px; border: 1px solid #ccc; border-radius: 6px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Лабораторна робота 4</h1>
+    <h2>Перевірка різних видів кешу:</h2>
+    <ul>
+        <li>
+            <a href="cache-style.php" target="_blank">Крок 1. Клієнтське кешування (CSS)</a>
+            - відкрийте, потім F5, і подивіться <code>F12 → Network → Size</code>.
+        </li>
+        <li>
+            <a href="cache-image.php" target="_blank">Крок 1 (додатково). Кешоване зображення</a>.
+        </li>
+        <li>
+            <a href="generate-report.php" target="_blank">Крок 2. Серверне кешування у файл</a>
+            - перший раз ~3 сек, потім миттєво.
+        </li>
+        <li>
+            <a href="session-cache.php" target="_blank">Крок 3. Кеш у сесії</a>
+            - перший раз ~2 сек, потім з кешу.
+        </li>
+        <li>
+            <a href="class-cache.php" target="_blank">Бонус. Кеш у статичній властивості класу</a>.
+        </li>
+    </ul>
+    <div class="hint">
+        <strong>Як перевірити клієнтське кешування:</strong>
+        <ol>
+            <li>Відкрийте цю сторінку.</li>
+            <li>Натисніть F12 → Network.</li>
+            <li>Перезавантажте (Ctrl+F5) - файли завантажаться з сервера.</li>
+            <li>Перезавантажте звичайно (F5) - у колонці Size побачите <code>(disk cache)</code>.</li>
+        </ol>
+    </div>
+    <h2>Приклад кешованого зображення:</h2>
+    <p>
+        <img class="preview-img" src="cache-image.php" alt="Кешоване зображення">
+    </p>
+    <p><small>Це зображення віддається через <code>cache-image.php</code> із заголовками кешування на 1 добу.</small></p>
+</body>
+</html>
